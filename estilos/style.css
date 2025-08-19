@@ -1,0 +1,1063 @@
+* {
+    margin: 0; 
+    box-sizing: border-box; /*Esto asegura que el tamaño de un elemento incluya el relleno y el borde dentro de las dimensiones definidas*/
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+/*INDEX*/
+
+/*Cabecera y menú*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #0077C8;
+    display: flex;
+    justify-content: space-between;
+    height: 13%;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: auto; 
+    height: 62px; 
+    margin-left: 50%; 
+}
+
+header .logo .logo-text {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400; 
+    font-size: 18px; 
+    color: #ffffff; 
+    text-align: center; /* Alineación del texto */
+    margin-left: 60px; /* Ajusta el margen izquierdo para eliminar el espacio */
+    text-shadow: 1px 2px 4px #174E43;
+}
+
+.logo-text a {
+    color: inherit; /* Hereda el color del elemento padre */
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+.logo-text a:hover {
+    color: inherit; /* Mantiene el color al pasar el ratón */
+    text-decoration: none; /* Mantiene el subrayado eliminado al pasar el ratón */
+}
+
+header nav {
+    margin-right: 50px;
+}
+
+
+header nav ul { 
+    list-style: none; 
+    display: flex; 
+    gap: 50px;
+    margin-top: 5%;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: rgb(255 255 255);
+    font-size: 20px;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px #003F74;
+}
+
+header nav ul li a.active { /* Rayita debajo de la seccion en la que se encuentra actualmente el usuario (active)*/
+    border-bottom: 1px solid #1C4D7D; /* Color y grosor de la línea */
+    padding-bottom: 5px; /* Espaciado entre el texto y la línea */
+}
+
+header nav ul li a:hover {
+    color: #d2f6f4; 
+}
+
+
+/*Menú de navegación en pantallas pequeñas*/
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+ol, ul {
+    padding-left: 1rem;
+}
+
+section{
+    margin-bottom: 4%;
+}
+
+/*Ajustes generales de la pagina*/
+body {
+    font-family: "Josefin Sans", serif;
+    margin-top: 6%; /* Ajusta este valor para dar espacio al header (igual a su altura) */
+    color: #000000;
+}
+
+/*Estilos de los títulos y subtítulos*/
+.titulo{
+    color: rgb(0, 0, 0);
+    font-weight: 1000;
+}
+
+.subtitulo{
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+}
+
+/*Estilos del carrusel principal*/
+#carruselprincipal .carousel-inner img {
+    height: 450px; /* Ajusta este valor según sea necesario */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+}
+
+#carruselprincipal{
+    background-color: #838382;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    background-color: #000000;
+    border-radius: 25%;
+}
+
+.carrusel-control {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+/*Categorias de especialidades y especialistas*/
+#especialidades, #especialistas {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.intro {
+    text-align: center;
+    font-size: 150%;
+    margin: 0 22%;
+}
+
+#categorias.container {
+display: flex;
+justify-content: space-around;
+text-align: center;
+padding: 20px;
+}
+
+section .container p{
+    font-size: 140%;
+}
+
+/*largo de las letras en categorias*/
+.category {
+width: 18%;
+opacity: 0;
+transform: translateY(50px);
+transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.category.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.icon {
+width: 60%;
+margin-bottom: 8%;
+}
+
+.mas_info{
+    padding: 10px 20px; 
+    background-color: #a9b3be; 
+    color: white;
+    font-size: 150%; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+    font-weight: 700;
+    margin-bottom: 2%;
+}
+
+.mas_info:hover{
+    background-color: #545454;
+}
+
+/*estilos de notros, misión y visión*/
+#sobre_nosotros .nos_ima, #mision .mision_ima {
+    display: flex;
+    align-items: left;
+}
+
+#sobre_nosotros .nos_ima img, #mision .mision_ima img {
+    width: 30%; 
+    height: 280px;
+    margin-left: 12%; 
+    border-radius: 2%;
+}
+
+#sobre_nosotros .nos_ima .nos_text, #mision .mision_ima .mision_text { 
+    font-size: 140%; 
+    text-align: left; /* Alineación del texto */
+    margin: 0 15% 0 2%;
+}
+
+/* Animación de aparición para "Sobre Nosotros" */
+.nos_ima {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.nos_ima.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/*Especialistas*/
+#especialistas .container {
+    display: flex;
+    justify-content: center; /* Centra los elementos */
+}
+
+#especialistas .container > * {
+    margin: 0 40px; /* Ajusta el margen horizontal de las tarjetas */
+}
+
+.id-card {
+    width: 25%;
+    padding: 1%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.id-photo {
+    margin-bottom: 15px;
+}
+
+.id-photo img {
+    width: 80%;
+    height: auto;
+    border-radius: 10%;
+}
+
+.id-info h2 {
+    font-size: 18px;
+    color: #333;
+}
+
+/*estilos de misión y visión*/
+#vision .vision_ima {
+    margin-top: 6%;
+    display: flex;
+    flex-direction: row-reverse; /* Cambia la dirección de la fila para que la imagen esté a la derecha */
+}
+
+#vision .vision_ima img {
+    width: 30%; 
+    height: 280px;
+    margin-right: 15%; 
+    border-radius: 2%;
+}
+
+#vision .vision_ima .vision_text { 
+    font-size: 140%; 
+    text-align: left; /* Alineación del texto */
+    margin-left: 12%;
+}
+
+/* Animación de aparición para "Misión" */
+.mision_ima {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.mision_ima.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Animación de aparición para "Visión" */
+.vision_ima {
+    opacity: 0;
+    transform: translateX(50px); /* Sale desde la derecha */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.vision_ima.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/*Botón de WhatsApp*/
+.whatsapp-btn {
+    position: fixed;
+    bottom: 6px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.whatsapp-btn:hover {
+    background-color: #20b358;
+}
+
+.whatsapp-btn i {
+    font-size: 30px;
+}
+
+/*Footer*/
+footer {
+    background-color: #f0f0f0;
+    padding-bottom: 2%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.logo-section {
+    flex: 1;
+    text-align: center;
+}
+
+.logo-section img {
+    max-width: 200px;
+}
+
+.links-section, .contact-section {
+    flex: 1;
+    text-align: left;
+}
+
+.links-section h3, .contact-section h3 {
+    margin-bottom: 10px;
+    font-weight: 600; 
+    font-size: 18px; 
+    color: #000000;
+}
+
+.links-section ul, .contact-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-section li, .contact-section li {
+    margin: 5px 0;
+}
+
+.links-section a, .contact-section a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.links-section a:hover, .contact-section a:hover {
+    text-decoration: underline;
+}
+
+.contact-section p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+footer .footer-icons {
+    display: flex;
+    gap: 20px; /* Espacio entre íconos */
+}
+
+footer .footer-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 50%; /* Hacer que los íconos tengan forma de círculo */
+    color: white;
+    background-color: #949494;
+    font-size: 24px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer .footer-icons a:hover {
+    background-color: white;
+    color: #000000; /* Cambiar color al fondo verde al pasar el ratón */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    background-color: #e0e0e0;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #555;
+}
+
+/*Pagina Servicios*/
+
+#galeria_servicios .container{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#galeria_servicios .slider{
+    position: absolute;
+    inset: 80px 200px 80px 80px;
+    background: #ccc;
+    border-radius: 20px;
+}
+
+#galeria_servicios .slider .slides{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 240px;
+    height: 320px;
+    background: var(--img);
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    transition: 0.5s;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+#galeria_servicios .slider .slides:nth-child(1),
+#galeria_servicios .slider .slides:nth-child(2)
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(0%);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0);
+    background-size: cover;
+
+}
+
+#galeria_servicios .slider .slides:nth-child(3)
+{
+    left: calc(53% + 240px);
+    background-size: cover;
+}
+
+#galeria_servicios .slider .slides:nth-child(4)
+{
+    left: calc(53% + 500px);
+    background-size: cover;
+}
+
+#galeria_servicios .slider .slides:nth-child(5)
+{
+    left: calc(53% + 760px);
+    background-size: cover;
+}
+
+#galeria_servicios .slider .slides:nth-child(6)
+{
+    left: calc(53% + 1020px);
+    background-size: cover;
+    opacity: 0;
+}
+
+#galeria_bot .buttons {
+    position: relative;
+    bottom: 50px; /*Fuera de la formula original*/
+    display: flex;
+    gap: 20px;
+    justify-content: center; /*Fuera de la formula original*/
+}
+
+#galeria_bot .buttons span{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: #111;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+#galeria_bot .buttons span::before
+{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-top: 4px solid #fff;
+    border-left: 4px solid #fff;
+    transform: rotate(315deg) translate(2px, 2px);
+}
+
+#galeria_bot .buttons span:nth-child(2)::before
+{
+    transform: rotate(135deg) translate(2px, 2px);
+}
+
+#galeria_bot .buttons span:active
+{
+    opacity: 0.5;
+}
+
+
+#galeria_servicios .content
+{
+    position: relative;
+    padding: 40px;
+    max-width: 600px; /*largo maximo del texto dentro de la imagen*/
+    transition: 0.25s;
+    transition-delay: 0s;
+    transform: translateY(40px);
+    z-index: 10000;
+    opacity: 0; /* Oculta el contenido de las viñetas de la galeria TODO */
+}
+
+#galeria_servicios .content h2
+{
+    font-size: 4em;
+    color: #fff;
+    width: 50%;
+    background-color: #545454;
+    border-radius: 10px;
+}
+
+#galeria_servicios .content p{
+    color: #000;
+    font-size: 18px;
+    background-color: #f9f4f4;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#galeria_servicios .slider .slides:nth-child(1) .content,
+#galeria_servicios .slider .slides:nth-child(2) .content
+{
+    opacity: 1;
+    transform: translateY(30px); /*Ajusta la altura del contendio general de la viñeta*/
+    transition-delay: 0.5s;
+}
+
+
+/*Pagina pqrs*/
+
+.accordion{
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgb(59 65 73 / 25%);
+}
+
+.accordion-button {
+    font-size: 1.3rem;
+    background-color: #d9d9d9;
+    font-weight: 1000;
+}
+
+:root, [data-bs-theme=light] {
+    --bs-primary-text-emphasis: rgb(0, 0, 0);
+    --bs-primary-bg-subtle: #96999e;
+    --bs-secondary-text-emphasis: #2b2f32;
+}
+
+
+/*Responsive pantallas pequeñas*/
+@media (max-width: 767px) {
+    
+    /*Cabecera*/
+    header {
+        justify-content: space-between;
+        height: auto;
+        margin-bottom: 0%;
+    }
+    
+    header .logo {
+        display: flex;
+        align-items: center;
+       /*  margin-right: 80px; Elimina cualquier margen derecho */
+    }
+    
+    header .logo img {
+        height: 55px; /* Reduce el tamaño del logo */
+        margin-left: 10%;
+        padding: 10px 5px;
+    }
+    
+    header .logo .logo-text {
+        font-size: 13px; /* Reduce el tamaño del texto */
+        margin-left: 10px;
+    }
+    
+    /*Menú de navegación*/
+    header nav {
+        display: none; /* Oculta el nav en pantallas pequeñas */
+    }
+
+    header nav.show {
+        display: block;
+        position: fixed;
+        top: 55px;
+        right: -250px;
+        height: 100%;
+        width: 250px;
+        background-color: #0077c8;
+        transition: right 0.3s ease;
+    }
+
+    header nav.show.active {
+        right: -50px;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: relative;
+        top: 0;
+        right: 0;
+        height: auto;
+        width: 100%;
+        background-color: transparent;
+        padding-top: 0;
+        transition: none;
+    }
+
+    header nav ul li a {
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+        padding-right: 26px;
+    }
+
+    /*Ajuste del cuerpo*/
+    body section{
+        margin-bottom: 13%;
+    }
+
+    /*Estilos del carrusel principal*/
+
+    #carrusel{
+        margin-top: 10%;
+    }
+
+    #carruselprincipal .carousel-inner #carrusel_largo img {
+        height: 225px;
+        left: -69px;
+        position: relative;
+    }
+
+    #carruselprincipal .carousel-inner #carrusel_corto img {
+        height: 225px;
+    }
+
+    /*Categorias de especializacion*/
+   .intro {
+        text-align: center;
+        font-size: 1.05em;
+        margin: 0 5%;
+    }
+
+    #categorias {
+        display: flex;
+        flex-direction: column; /* Coloca las categorías en una columna */
+        gap: 20px; /* Espacio entre las categorías */
+    }
+
+    #categorias .icon{
+        width: 40%;
+    }
+
+    #categorias .category {
+        width: 100%; /* Asegura que cada categoría ocupe todo el ancho disponible */
+    }
+
+    .mas_info {
+        font-size: 1.2em; /* Ajusta el tamaño de la fuente del botón */
+    }
+
+    /*Sobre nosotros, misión y visión*/
+    #sobre_nosotros .nos_ima, #mision .mision_ima, #vision .vision_ima {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #sobre_nosotros .nos_ima img, #mision .mision_ima img , #vision .vision_ima img {
+        display: block; /* Hace que la imagen se comporte como un bloque */
+        margin: 0 auto; /* Centra la imagen horizontalmente */
+        width: 76%;
+        height: 280px;
+        border-radius: 2%;
+        margin-bottom: 20px; /* Añade espacio entre la imagen y el texto */
+    }
+
+    #sobre_nosotros .nos_ima .nos_text, #mision .mision_ima .mision_text , #vision .vision_ima .vision_text {
+        font-size: 110%;
+        text-align: center;
+        margin: 0;
+        margin: 0% 5%;
+    }
+    
+    /*Especialistas*/
+    #especialistas .container {
+        display: flex;
+        flex-direction: column; /* Coloca las tarjetas en una columna */
+        gap: 20px; /* Espacio entre las tarjetas */
+        align-items: center;
+    }
+
+    .id-card {
+        width: 50%; /* Asegura que cada tarjeta ocupe todo el ancho disponible */
+    }
+
+    .id-photo img {
+        width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible */
+    }
+
+
+    /*Footer*/
+    .footer-container {
+        flex-direction: column; /* Coloca las secciones del footer en una columna */
+        align-items: center; /* Centra las secciones del footer */
+        text-align: center; /* Centra el texto */
+    }
+
+    .logo-section img {
+        max-width: 125px;
+    }
+
+    .logo-section, .links-section, .contact-section {
+        width: 80%; /* Asegura que cada sección ocupe todo el ancho disponible */
+        margin-bottom: 10px; /* Añade espacio debajo de cada sección */
+    }
+
+    .links-section, .contact-section {
+        text-align: center; /* Centra el texto en estas secciones */
+    }
+
+    .footer-icons {
+        justify-content: center; /* Centra los íconos */
+    }
+
+    /*Pagina de servicios*/
+  
+    #galeria_servicios .container {
+        height: 58vh;
+        margin-bottom: 12%;
+    }
+    
+    #galeria_servicios .slider {
+        position: absolute;
+        inset: 25px 18px 530px 18px;
+        background: #ccc;
+        border-radius: 20px;
+        height: 40vh;
+    }
+    
+    #galeria_servicios .slider .slides
+    {
+        width: 100px;
+        height: 100px;
+        top: initial;
+        bottom: -170px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    #galeria_servicios .slider .slides:nth-child(1),
+    #galeria_servicios .slider .slides:nth-child(2)
+    {
+        top: initial;
+        bottom: 0px;
+    }
+
+    #galeria_servicios .slider .slides:nth-child(3)
+    {
+        left: 0;
+    }
+
+    #galeria_servicios .slider .slides:nth-child(4)
+    {
+        left: 120px;
+    }
+
+    #galeria_servicios .slider .slides:nth-child(5)
+    {
+        left: 240px;
+    }
+
+    #galeria_servicios .slider .slides:nth-child(6)
+    {
+        left: 360px;
+    }
+
+    #galeria_servicios .content h2
+{
+    font-size: 2em;
+    color: #fff;
+    width: 60%;
+    background-color: #545454;
+    border-radius: 10px;
+}
+
+#galeria_servicios .content p{
+    color: #000;
+    font-size: 18px;
+    background-color: #f9f4f4;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#galeria_bot .buttons {
+    bottom: 38px;
+}
+
+}
+
+
+/*Responsive pantallas medianas*/
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    section{
+        margin-bottom: 8%;
+    }
+
+    /*Cabecera*/
+    header {
+        justify-content: space-between;
+        height: auto;
+        margin-bottom: 0%;
+    }
+    
+    header .logo {
+        display: flex;
+        align-items: center;
+    }
+    
+    header .logo img {
+        height: 64px;
+        margin-left: 10%;
+        padding: 8px 2px;
+    }
+    
+    header .logo .logo-text {
+        font-size: 16px; /* Reduce el tamaño del texto */
+        margin-left: 10px;
+    }
+    
+    header nav ul { 
+        gap: 38px;
+    }
+    
+
+    header nav ul li a {
+        font-size: 17px;
+    }
+    
+    /*Ajustes del carrusel*/
+
+    .carousel-control-next-icon, .carousel-control-prev-icon {
+        background-color: #000000;
+        border-radius: 25%;
+        padding: 16%;
+    }
+
+    #carruselprincipal .carousel-inner img {
+        height: 308px;
+        object-fit: cover;
+        left: -30px;
+        position: relative;
+    }
+
+    /*Categorias de especializacion*/
+    
+    .intro {
+        font-size: 162%;
+        margin: 0 14%;
+    }
+
+    #categorias .category {
+        width: 22%;
+    }
+    
+    #categorias.container {
+        padding: 12px;
+        max-width: unset;
+    }
+    
+    section .container p{
+        font-size: 132%;
+    }
+
+    /*Sobre nosotros, misión y visión*/
+
+    #sobre_nosotros .nos_ima img, #mision .mision_ima img {
+        margin-left: 8%; 
+    }
+    
+    #sobre_nosotros .nos_ima .nos_text, #mision .mision_ima .mision_text { 
+        margin: 0 0 0 2%;
+    }
+    
+    /*Especialistas*/
+
+    #especialistas .container > * {
+        margin: 0 40px; /* Ajusta el margen horizontal de las tarjetas */
+    }
+
+    .id-card {
+        width: 40%;
+    }
+
+    /*estilos de misión y visión*/
+    #vision .vision_ima {
+        margin-top: 6%;
+        display: flex;
+        flex-direction: row-reverse; /* Cambia la dirección de la fila para que la imagen esté a la derecha */
+    }
+
+    #vision .vision_ima img {
+        margin-right: 8%; 
+    }
+
+    #vision .vision_ima .vision_text { 
+        margin-left: 8%;
+        margin-right: 2%;
+    }
+
+    /*Botón de WhatsApp*/
+    .whatsapp-btn {
+        bottom: 28px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .whatsapp-btn i {
+        font-size: 38px;
+    }
+
+    /*Footer*/
+    .logo-section img {
+        max-width: 168px;
+    }
+    
+    /*Sección servicios*/
+
+    #galeria_servicios .container {
+        height: 58vh;
+        margin-bottom: -2%;
+    }
+    
+    #galeria_servicios .slider {
+        position: absolute;
+        inset: 25px 18px 530px 18px;
+        background: #ccc;
+        border-radius: 20px;
+        height: 40vh;
+    }
+    
+    #galeria_servicios .slider .slides
+    {
+        width: 100px;
+        height: 100px;
+        top: initial;
+        bottom: -170px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    #galeria_servicios .slider .slides:nth-child(1),
+    #galeria_servicios .slider .slides:nth-child(2)
+    {
+        top: initial;
+        bottom: 0px;
+    }
+
+    #galeria_servicios .slider .slides:nth-child(3)
+    {
+        left: 0;
+    }
+
+    #galeria_servicios .slider .slides:nth-child(4)
+    {
+        left: 120px;
+    }
+
+    #galeria_servicios .slider .slides:nth-child(5)
+    {
+        left: 240px;
+    }
+
+    #galeria_servicios .slider .slides:nth-child(6)
+    {
+        left: 360px;
+    }
+
+        #galeria_servicios .content h2
+    {
+        font-size: 2em;
+        color: #fff;
+        width: 60%;
+        background-color: #545454;
+        border-radius: 10px;
+    }
+
+    #galeria_servicios .content p{
+        color: #000;
+        font-size: 18px;
+        background-color: #f9f4f4;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    #galeria_bot .buttons {
+        bottom: 38px;
+    }
+
+}
