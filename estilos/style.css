@@ -38,7 +38,7 @@ header .logo .logo-text {
     font-weight: 400; 
     font-size: 18px; 
     color: #ffffff; 
-    text-align: center; /* Alineación del texto */
+    text-align: left; /* Alineación del texto */
     margin-left: 60px; /* Ajusta el margen izquierdo para eliminar el espacio */
     text-shadow: 1px 2px 4px #174E43;
 }
