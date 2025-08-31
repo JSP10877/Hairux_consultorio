@@ -7,6 +7,25 @@ html, body {
     overflow-x: hidden;
 }
 
+/*Ajustes generales de la pagina*/
+body {
+    font-family: "Josefin Sans", serif;
+    margin-top: 6%; /* Ajusta este valor para dar espacio al header (igual a su altura) */
+    color: #000000;
+    background-color: #F2F4F7;
+}
+
+/*Estilos de los títulos y subtítulos*/
+.titulo{
+    color: rgb(0, 0, 0);
+    font-weight: 1000;
+}
+
+.subtitulo{
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+}
+
 /*INDEX*/
 
 /*Cabecera y menú*/
@@ -16,7 +35,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: #0077C8;
+    background-color: #192440;
     display: flex;
     justify-content: space-between;
     height: 13%;
@@ -74,12 +93,12 @@ header nav ul li a {
 }
 
 header nav ul li a.active { /* Rayita debajo de la seccion en la que se encuentra actualmente el usuario (active)*/
-    border-bottom: 1px solid #1C4D7D; /* Color y grosor de la línea */
+    border-bottom: 1px solid #E6C68E; /* Color y grosor de la línea */
     padding-bottom: 5px; /* Espaciado entre el texto y la línea */
 }
 
 header nav ul li a:hover {
-    color: #d2f6f4; 
+    color: #E6C68E; 
 }
 
 
@@ -100,24 +119,6 @@ section{
     margin-bottom: 4%;
 }
 
-/*Ajustes generales de la pagina*/
-body {
-    font-family: "Josefin Sans", serif;
-    margin-top: 6%; /* Ajusta este valor para dar espacio al header (igual a su altura) */
-    color: #000000;
-}
-
-/*Estilos de los títulos y subtítulos*/
-.titulo{
-    color: rgb(0, 0, 0);
-    font-weight: 1000;
-}
-
-.subtitulo{
-    color: rgb(0, 0, 0);
-    font-weight: 700;
-}
-
 /*Estilos del carrusel principal*/
 #carruselprincipal .carousel-inner img {
     height: 450px; /* Ajusta este valor según sea necesario */
@@ -125,7 +126,7 @@ body {
 }
 
 #carruselprincipal{
-    background-color: #838382;
+    background-color: #b7bcc3;
     border-bottom: 1px solid black;
     text-align: center;
 }
