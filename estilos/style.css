@@ -649,7 +649,7 @@ footer .footer-icons a:hover {
         right: -250px;
         height: 100%;
         width: 250px;
-        background-color: #0077c8;
+        background-color: #192440;
         transition: right 0.3s ease;
     }
 
@@ -691,10 +691,19 @@ footer .footer-icons a:hover {
         margin-top: 10%;
     }
 
-    #carruselprincipal .carousel-inner #carrusel_largo img {
+    #carruselprincipal .carousel-inner {
         height: 225px;
-        left: -69px;
-        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Imagen larga centrada y contenida */
+    #carruselprincipal .carousel-inner #carrusel_largo img {
+        height: 160px;
+        left: 0;
+        width: auto;
+        object-fit: contain;
+        display: block;
     }
 
     #carruselprincipal .carousel-inner #carrusel_corto img {
