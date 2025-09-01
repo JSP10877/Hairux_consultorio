@@ -678,6 +678,7 @@ footer .footer-icons a:hover {
     .menu-toggle {
         display: block;
         padding-right: 26px;
+        color: #ffffff;
     }
 
     /*Ajuste del cuerpo*/
@@ -688,7 +689,7 @@ footer .footer-icons a:hover {
     /*Estilos del carrusel principal*/
 
     #carrusel{
-        margin-top: 10%;
+        margin-top: 5%;
     }
 
     #carruselprincipal .carousel-inner {
@@ -923,7 +924,7 @@ footer .footer-icons a:hover {
     #carruselprincipal .carousel-inner img {
         height: 308px;
         object-fit: cover;
-        left: -30px;
+        left: 0;
         position: relative;
     }
 
