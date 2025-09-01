@@ -156,10 +156,11 @@ section{
 }
 
 #categorias.container {
-display: flex;
-justify-content: space-around;
-text-align: center;
-padding: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    gap: 15%;
 }
 
 section .container p{
@@ -184,6 +185,7 @@ width: 60%;
 margin-bottom: 8%;
 }
 
+/*Botón de "mas información"*/
 .mas_info{
     padding: 10px 20px; 
     background-color: #a9b3be; 
@@ -345,8 +347,7 @@ footer {
 
 .footer-container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    align-items: anchor-center;
     max-width: 1200px;
     margin: 0 auto;
     padding-top: 20px;
