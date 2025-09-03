@@ -14,10 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 const content = doc.querySelector(elementId);
                 if (content) {
                     document.querySelector(selector).innerHTML = content.innerHTML;
-                    // Si es el carrusel, activa el toggle después de cargar
-                    if (selector === '#carrusel') {
-                        toggleCarrusel();
-                    }
                 } else {
                     console.warn(`Elemento ${elementId} no encontrado en ../index.html`);
                 }
@@ -67,24 +63,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Incorporar el toggle para el carrusel después de cargar
     function toggleCarrusel() {
-        // Espera a que el carrusel y el botón estén en el DOM
         const interval = setInterval(() => {
             const carrusel = $('#carruselprincipal');
             const toggleButton = $('#pausePlayBtn');
             if (carrusel.length && toggleButton.length) {
+                let autoPlayTimer = null;
+                let autoPlayInterval = 4000; // Cambia a tu preferencia (milisegundos)
                 let isPaused = false;
-                toggleButton.on('click', function () {
+
+                function startAutoPlay() {
+                    stopAutoPlay();
+                    autoPlayTimer = setInterval(() => {
+                        carrusel.carousel('next');
+                    }, autoPlayInterval);
+                    isPaused = false;
+                    toggleButton.html('<i class="fa fa-pause"></i>');
+                }
+
+                function stopAutoPlay() {
+                    if (autoPlayTimer) clearInterval(autoPlayTimer);
+                    isPaused = true;
+                    toggleButton.html('<i class="fa fa-play"></i>');
+                }
+
+                // Botón pausa/play
+                toggleButton.off('click').on('click', function () {
                     if (isPaused) {
-                        carrusel.carousel('cycle');
-                        toggleButton.html('<i class="fa fa-pause"></i>');
+                        startAutoPlay();
                     } else {
-                        carrusel.carousel('pause');
-                        toggleButton.html('<i class="fa fa-play"></i>');
+                        stopAutoPlay();
                     }
-                    isPaused = !isPaused;
                 });
+
+                // Inicia autoplay al cargar
+                startAutoPlay();
+
                 clearInterval(interval); // Detiene el intervalo cuando ya está listo
-                console.log('Botón de pausa/play configurado.');
+                console.log('Botón de pausa/play y autoplay configurados.');
             }
         }, 200); // Revisa cada 200ms
     }
