@@ -14,6 +14,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 const content = doc.querySelector(elementId);
                 if (content) {
                     document.querySelector(selector).innerHTML = content.innerHTML;
+                    // Si es el carrusel, activa el toggle después de cargar
+                    if (selector === '#carrusel') {
+                        toggleCarrusel();
+                    }
                 } else {
                     console.warn(`Elemento ${elementId} no encontrado en ../index.html`);
                 }
@@ -63,22 +67,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Incorporar el toggle para el carrusel después de cargar
     function toggleCarrusel() {
-        const carrusel = $('#carruselprincipal');
-        const toggleButton = $('#toggleButton');
-        let isPaused = false;
-
-        toggleButton.on('click', function () {
-            if (isPaused) {
-                carrusel.carousel('cycle');
-                toggleButton.html('<i class="fa fa-pause"></i>');
-            } else {
-                carrusel.carousel('pause');
-                toggleButton.html('<i class="fa fa-play"></i>');
+        // Espera a que el carrusel y el botón estén en el DOM
+        const interval = setInterval(() => {
+            const carrusel = $('#carruselprincipal');
+            const toggleButton = $('#pausePlayBtn');
+            if (carrusel.length && toggleButton.length) {
+                let isPaused = false;
+                toggleButton.on('click', function () {
+                    if (isPaused) {
+                        carrusel.carousel('cycle');
+                        toggleButton.html('<i class="fa fa-pause"></i>');
+                    } else {
+                        carrusel.carousel('pause');
+                        toggleButton.html('<i class="fa fa-play"></i>');
+                    }
+                    isPaused = !isPaused;
+                });
+                clearInterval(interval); // Detiene el intervalo cuando ya está listo
+                console.log('Botón de pausa/play configurado.');
             }
-            isPaused = !isPaused;
-        });
-
-        console.log('Botón de pausa/play configurado.'); // LOG DCAP
+        }, 200); // Revisa cada 200ms
     }
 
     toggleCarrusel(); // Invoca a la función de toggleCarrusel después de que el DOM esté completamente cargado

@@ -15,6 +15,11 @@ body {
     background-color: #F2F4F7;
 }
 
+#sobre_nosotros p, #especialistas p, #mision p, #vision p {
+    margin-right: 5%;
+}
+
+
 /*Estilos de los títulos y subtítulos*/
 .titulo{
     color: rgb(0, 0, 0);
@@ -121,7 +126,7 @@ section{
 
 /*Estilos del carrusel principal*/
 #carruselprincipal .carousel-inner img {
-    height: 450px; /* Ajusta este valor según sea necesario */
+    height: 450px; 
     object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
 }
 
@@ -143,6 +148,27 @@ section{
     z-index: 10;
 }
 
+/* Limita el área clickeable de los controles del carrusel */
+.carousel-control-prev, .carousel-control-next {
+height: 55%;
+    top: 20%;
+    width: 5%;
+}
+#pausePlayBtn {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    z-index: 20;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /*Categorias de especialidades y especialistas*/
 #especialidades, #especialistas {
     margin-top: 5%;
@@ -157,10 +183,9 @@ section{
 
 #categorias.container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     text-align: center;
     padding: 20px;
-    gap: 15%;
 }
 
 section .container p{
@@ -240,7 +265,7 @@ margin-bottom: 8%;
 }
 
 #especialistas .container > * {
-    margin: 0 40px; /* Ajusta el margen horizontal de las tarjetas */
+    margin: 10px 40px 0px 40px; /* Ajusta el margen horizontal de las tarjetas */
 }
 
 .id-card {
@@ -686,6 +711,11 @@ footer .footer-icons a:hover {
         margin-bottom: 13%;
     }
 
+    /*ajuste general*/
+    #sobre_nosotros p, #especialistas p, #mision p, #vision p {
+    margin-right: unset;
+    }
+
     /*Estilos del carrusel principal*/
 
     #carrusel{
@@ -709,6 +739,10 @@ footer .footer-icons a:hover {
 
     #carruselprincipal .carousel-inner #carrusel_corto img {
         height: 225px;
+    }
+
+    #pausePlayBtn {
+        right: 0px;
     }
 
     /*Categorias de especializacion*/
@@ -746,7 +780,7 @@ footer .footer-icons a:hover {
         display: block; /* Hace que la imagen se comporte como un bloque */
         margin: 0 auto; /* Centra la imagen horizontalmente */
         width: 76%;
-        height: 280px;
+        height: 250px;
         border-radius: 2%;
         margin-bottom: 20px; /* Añade espacio entre la imagen y el texto */
     }
