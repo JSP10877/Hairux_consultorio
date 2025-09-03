@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const toggleButton = $('#pausePlayBtn');
             if (carrusel.length && toggleButton.length) {
                 let autoPlayTimer = null;
-                let autoPlayInterval = 4000; // Cambia a tu preferencia (milisegundos)
+                let autoPlayInterval = 5000; // Cambia a tu preferencia (milisegundos)
                 let isPaused = false;
 
                 function startAutoPlay() {
@@ -148,5 +148,19 @@ document.addEventListener('DOMContentLoaded', function () {
     animateSection('.nos_ima', 'animate'); // Sobre Nosotros
     animateSection('.mision_ima', 'animate'); // Misión
     animateSection('.vision_ima', 'animate'); // Visión
+
+    // Animación para la sección "Especialistas"
+    const especialistasSection = document.querySelector('#especialistas');
+    if (especialistasSection) {
+        const especialistasObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    especialistasSection.classList.add('animate');
+                    especialistasObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.2 }); // Se activa cuando el 20% es visible
+        especialistasObserver.observe(especialistasSection);
+    }
 });
 
