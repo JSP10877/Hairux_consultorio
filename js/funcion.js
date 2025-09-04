@@ -162,5 +162,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }, { threshold: 0.2 }); // Se activa cuando el 20% es visible
         especialistasObserver.observe(especialistasSection);
     }
+
+    // Animación para el video de testimonio
+    const videoTestimonio = document.querySelector('#video_testimonio');
+    if (videoTestimonio) {
+        const videoObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    videoTestimonio.classList.add('animate');
+                    setTimeout(() => {
+                        const video = videoTestimonio.querySelector('video');
+                        if (video) {
+                            video.play();
+                        }
+                    }, 1000);
+                    videoObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.2 });
+        videoObserver.observe(videoTestimonio);
+    }
 });
 

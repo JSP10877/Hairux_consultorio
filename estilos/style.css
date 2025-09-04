@@ -19,6 +19,9 @@ body {
     margin-right: 5%;
 }
 
+section{
+    margin-bottom: 5.8%;
+}
 
 /*Estilos de los títulos y subtítulos*/
 .titulo{
@@ -120,10 +123,6 @@ ol, ul {
     padding-left: 1rem;
 }
 
-section{
-    margin-bottom: 4%;
-}
-
 /*Estilos del carrusel principal*/
 #carruselprincipal .carousel-inner img {
     height: 450px; 
@@ -167,6 +166,43 @@ height: 55%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/*video de testimonio*/
+#video_testimonio {
+    margin-top: 5%;
+    text-align: center;
+}
+
+#video_testimonio .video-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 2% 0;
+}
+
+#video_testimonio video {
+    width: auto;
+    max-width: 60%;
+    height: 420px; /* Ajusta según tu preferencia */
+    background: #111; /* Fondo negro para los bordes */
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Animación de aparición difuminada para el video de testimonio */
+#video_testimonio {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+#video_testimonio.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /*Categorias de especialidades y especialistas*/
