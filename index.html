@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hairux Dr. David León - Tricología y Trasplante Capilar en Bogotá</title>
+    <title>Hairux Dr. David León - Tricología, Trasplante Capilar y medicina integrativa en Bogotá</title>
     <link rel="icon" href="/imagenes/logo.png">
 
     <!-- Bootstrap CSS  -->
@@ -30,13 +30,13 @@
     <header>
         <div class="logo">
             <a href="/index.html">
-                <img src="/imagenes/Logo_blanco.png" alt="Logo consultorio">
+                <img src="/imagenes/Logo.png" alt="Logo consultorio">
             </a>
              
             <div class="logo-text">
                 <a href="/index.html">
-                    <span>Hairux | Tricología</span><br>
-                    <span>Y Trasplante Capilar</span>
+                    <span>HAIRUX |</span><br>
+                    <span>Dr. David León Osorio</span>
                 </a>
             </div>
         </div>
@@ -51,6 +51,24 @@
         </nav>
     </header>
 
+    <!-- Popup de noticia importante -->
+    <div id="news-popup-overlay">
+        <div id="news-popup">
+            <button type="button" class="popup-close" aria-label="Cerrar noticia">×</button>
+            <div class="popup-image">
+                <img src="/imagenes/imagenes.pag/brochure.png" alt="Noticia importante Hairux">
+            </div>
+            <div class="popup-body">
+                <h3>¡Domina el Trasplante Capilar y de Barba! 🚀</h3>
+                <p>Deja la teoría atrás y empieza a implantar en pacientes reales. Participa en este programa intensivo y 100% Hands-On en Bogotá liderado por el Dr. David León. Cupos ultra-exclusivos para solo 10 médicos buscando éxito inmediato en el mercado. ¡Asegura tu lugar hoy!</p>
+            </div>
+            <div class="popup-actions">
+                <a href="/documentos/brochure_nuevo_curso.pdf" target="_blank" rel="noopener noreferrer">Quiero saber mas !!</a>
+                <button type="button" class="popup-close-btn">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Carrusel -->
         <div id="carrusel">
             <div id="carruselprincipal" class="carousel slide" data-bs-pause="false">
@@ -60,11 +78,14 @@
                     <button type="button" data-bs-target="#carruselprincipal" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carruselprincipal" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     <button type="button" data-bs-target="#carruselprincipal" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carruselprincipal" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#carruselprincipal" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                    <button type="button" data-bs-target="#carruselprincipal" data-bs-slide-to="6" aria-label="Slide 7"></button>
                 </div>
                 <!-- Slides -->
                 <div class="carousel-inner">
                         <div id="carrusel_largo" class="carousel-item active">
-                            <img src="/imagenes/img.carrusel/bienvenida.png" alt="Promoción 1">
+                            <img src="/imagenes/img.carrusel/bienvenida.png" alt="Bienvenida">
                         </div>
                         <div id="carrusel_corto" class="carousel-item">
                             <img src="/imagenes/img.carrusel/Imagen1.png" alt="Promoción 1">
@@ -74,6 +95,15 @@
                         </div>
                         <div id="carrusel_corto" class="carousel-item">
                             <img src="/imagenes/img.carrusel/Imagen3.png" alt="Promoción 3">
+                        </div>
+                        <div id="carrusel_corto" class="carousel-item">
+                            <img src="/imagenes/img.carrusel/Imagen4.png" alt="Promoción 4">
+                        </div>
+                        <div id="carrusel_corto" class="carousel-item">
+                            <img src="/imagenes/img.carrusel/Imagen5.png" alt="Promoción 5">
+                        </div>
+                        <div id="carrusel_corto" class="carousel-item">
+                            <img src="/imagenes/img.carrusel/Imagen6.png" alt="Promoción 6">
                         </div>
                     </div>
 
@@ -135,10 +165,18 @@
         <div id="video_testimonio">
             <div class="intro">
                 <h2 class="titulo">¿Quieres saber cómo se ve un resultado real?</h2>
-                <p>Te presentamos a un paciente que inició tratamiento para recuperar su cabello. Este video refleja su proceso, sus resultados y la confianza que volvió a sentir.</p>
+                <p>Te presentamos a varios pacientes que hemos tenido y como iniciaron su tratamiento para recuperar su cabello. Este video refleja su proceso, sus resultados y la confianza que volvieron a sentir.</p>
             </div>
-            <div class="video-container">
-                <video id="bienvenidaVideo" src="/videos/Maxi_video.mp4" controls muted style="width:100%;"></video>
+            <div class="video-grid">
+                <div class="video-card">
+                    <video id="bienvenidaVideo" src="/videos/testimonio1.mp4" controls muted></video>
+                </div>
+                <div class="video-card">
+                    <video src="/videos/testimonio2.mp4" controls muted></video>
+                </div>
+                <div class="video-card">
+                    <video src="/videos/testimonio3.mp4" controls muted></video>
+                </div>
             </div>
         </div>
     </section>
@@ -147,10 +185,16 @@
     <section>
         <div id="sobre_nosotros">
             <div class="nos_ima">
-                <img src="/imagenes/imagenes.pag/nosotros.png" alt="Foto de médico">
+                <img src="/imagenes/imagenes.pag/nosotros2.png" alt="Foto de médico">
                 <div class="nos_text">
                     <h3 class="subtitulo">Sobre Nosotros</h3>
-                    <p> Soy el Dr. David León Osorio Álvarez, médico especialista en tricología y trasplante capilar en Bogotá, Colombia. En Hairux, nuestra clínica y consultorio de trasplante capilar, tratamos la caída del cabello en hombres y mujeres con técnicas avanzadas, atención médica cercana y resultados naturales y duraderos.</p>
+                    <p> Dr. David León Osorio, especialista en tricología, 
+                        trasplante capilar y medicina integrativa en Bogotá y también en Neiva. En Hairux, ofrecemos soluciones
+                        avanzadas contra la alopecia y la caída del cabello en hombres
+                        y mujeres. Mediante técnicas de injerto capilar y una atención
+                        personalizada, garantizamos resultados naturales y duraderos 
+                        que devuelven tu confianza. 
+                    </p>
                 </div>
             </div>
         </div>
@@ -160,15 +204,14 @@
     <section>
         <div id="especialistas">
             <div class="intro">
-                <h2 class="titulo">Nuestros Especialistas</h2>
-                <p>Actualmente lidero personalmente cada procedimiento, apoyado por un equipo especializado en trasplante capilar, 
-                    entrenado con protocolos internacionales para garantizar el máximo cuidado en cada etapa.
+                <h2 class="titulo">Nuestro Propósito: Ética, Formación y Excelencia Capilar</h2>
+                <p>Creemos que la excelencia técnica debe ir de la mano con la calidad humana. Por eso, impulsamos una escuela médica basada en la ética y la formación continua, respaldando a un equipo especializado que prioriza tu bienestar real.
                 </p>
             </div>
             <div class="container">
                 <div class="id-card">
                     <div class="id-photo">
-                        <img src="/imagenes/imagenes.pag/david2.jpg" alt="Foto de Identificación">
+                        <img src="/imagenes/imagenes.pag/formación.png" alt="Foto de Identificación">
                     </div>
                 </div>
             </div>
@@ -185,12 +228,12 @@
                 <div class="mision_text">
                     <h3 class="subtitulo">Misión</h3>
                     <p> Brindar soluciones médicas y estéticas personalizadas para 
-                        el cuidado de la salud capilar, aplicando tecnología de vanguardia
-                        y técnicas mínimamente invasivas que favorecen la recuperación y
-                        el bienestar del paciente. Todo esto acompañado de un trato humano 
-                        cercano y empático, orientado a generar confianza y comodidad en 
-                        cada etapa del proceso, con el objetivo de alcanzar siempre resultados 
-                        naturales, armónicos y satisfactorios.
+                        el tratamiento de la caída del cabello, aplicando tecnología
+                        de vanguardia y técnicas de injerto capilar mínimamente invasivas.
+                        Todo esto acompañado de un trato humano cercano y empático, 
+                        orientado a generar confianza y comodidad en cada etapa del 
+                        proceso, con el objetivo de alcanzar siempre resultados naturales 
+                        y satisfactorios.
                     </p>
                 </div>
             </div>
@@ -204,10 +247,10 @@
                 <img src="/imagenes/imagenes.pag/vision.png" alt="Foto de visión">
                 <div class="vision_text">
                     <h3 class="subtitulo">Visión</h3>
-                    <p> Ser el centro de referencia en Colombia y Latinoamérica en tricología y
-                        trasplante capilar, distinguiéndonos por la excelencia médica, la
-                        innovación constante y la capacidad de ofrecer a cada paciente una 
-                        experiencia única, basada en confianza, bienestar y resultados de alta calidad.
+                    <p>Ser el centro de referencia en Colombia y Latinoamérica en tricología 
+                       y trasplante capilar, distinguiéndonos por la excelencia médica, la 
+                       innovación constante y la capacidad de ofrecer a cada paciente una 
+                       experiencia única, basada en confianza, bienestar y resultados de alta calidad.
                     </p>
                 </div>
             </div>
@@ -229,7 +272,11 @@
                 </div>
                 <div class="contact-section">
                     <h3>Contáctanos</h3>
-                    <p> Oficina 302, Torre HHC Cedritos – COLMÉDICA, Calle 144 #11-45, Bogotá, Colombia.</p>
+                    <p> Bogotá: Calle 144 #11-45, Oficina 302, Edificio COLMEDICA - Cedritos
+                    <br>
+                    <br>
+                        Neiva: Calle 46 # 16-24 Edificio Centro Comercial San Juan Plaza Oficina 608
+                    </p>
                     <div class="footer-icons">
                         <a href="tel:+573214245092"><i class="fas fa-phone-alt" alt="Teléfono"></i></a>
                         <a href="https://maps.app.goo.gl/r5tUoSqsuBJSqCt78?g_st=ipc" target="_blank"><i class="fas fa-map-marker-alt"></i alt="Ubicación"></a>

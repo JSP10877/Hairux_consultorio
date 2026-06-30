@@ -61,6 +61,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     observer.observe(footer); // Observar el footer
 
+    const newsPopupOverlay = document.getElementById('news-popup-overlay');
+    if (newsPopupOverlay) {
+        const popupCloseButtons = newsPopupOverlay.querySelectorAll('.popup-close, .popup-close-btn');
+        const popupStorageKey = 'hairuxNewsPopupSeen';
+
+        function closeNewsPopup() {
+            newsPopupOverlay.style.display = 'none';
+            sessionStorage.setItem(popupStorageKey, '1');
+        }
+
+        popupCloseButtons.forEach(button => {
+            button.addEventListener('click', closeNewsPopup);
+        });
+
+        if (!sessionStorage.getItem(popupStorageKey)) {
+        newsPopupOverlay.style.display = 'flex';
+}
+    }
+
     // Incorporar el toggle para el carrusel después de cargar
     function toggleCarrusel() {
         const interval = setInterval(() => {

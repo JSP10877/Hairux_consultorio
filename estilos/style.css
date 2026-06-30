@@ -174,25 +174,28 @@ height: 55%;
     text-align: center;
 }
 
-#video_testimonio .video-container {
-    position: relative;
-    width: 100%;
+#video_testimonio .video-grid {
     display: flex;
     justify-content: center;
-    align-items: center;
-    border-radius: 10px;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    width: 100%;
     padding: 2% 0;
 }
 
-#video_testimonio video {
-    width: auto;
-    max-width: 60%;
-    height: 420px; /* Ajusta según tu preferencia */
-    background: #111; /* Fondo negro para los bordes */
+#video_testimonio .video-card {
+    width: min(100%, 320px);
+}
+
+#video_testimonio .video-card video {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    height: auto;
+    background: #111;
     border-radius: 10px;
     display: block;
-    margin: 0 auto;
 }
+
 
 /* Animación de aparición difuminada para el video de testimonio */
 #video_testimonio {
@@ -203,6 +206,136 @@ height: 55%;
 #video_testimonio.animate {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Pop up de noticia importante */
+#news-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2200;
+    padding: 2rem;
+}
+
+#news-popup {
+    width: fit-content; 
+    
+    /* Límites de seguridad horizontales */
+    min-width: 320px;   
+    max-width: 680px;      
+    max-height: 85vh;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+#news-popup .popup-image {
+    flex: 1;
+    min-height: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fdfdfd; /* Fondo neutro por si la imagen es transparente */
+}
+
+#news-popup .popup-image img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 450px; 
+    object-fit: contain;
+    display: block;
+}
+
+#news-popup .popup-body {
+    padding: 0.8rem;
+    text-align: center;
+    background: #ffffff;
+    /* Mantiene los botones siempre fijos abajo */
+    flex-shrink: 0; 
+    border-top: 1px solid rgba(25, 36, 64, 0.05);
+}
+
+#news-popup .popup-body p {
+    margin-bottom: 0.5rem;
+    font-size: 100%;
+}
+
+#news-popup .popup-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    /* Centramos los botones dentro del contenedor blanco */
+    align-items: center;
+    padding: 2%;
+}
+
+#news-popup .popup-actions a,
+#news-popup .popup-actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%; 
+    max-width: 400px;      
+    border-radius: 12px;
+    border: none;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    padding: 0.95rem 1rem;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+/* Enlace PDF */
+#news-popup .popup-actions a {
+    background: #192440;
+    color: #ffffff;
+}
+#news-popup .popup-actions a:hover {
+    background: #24355c;
+}
+
+/* Botón grande de cerrar */
+#news-popup .popup-actions button {
+    background: #f1f1f1;
+    color: #192440;
+}
+#news-popup .popup-actions button:hover {
+    background: #e5e5e5;
+}
+
+/* Botón 'X' superior derecho */
+#news-popup .popup-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: rgba(25, 36, 64, 0.7); 
+    color: #ffffff;
+    font-size: 1.4rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background 0.3s ease;
+}
+#news-popup .popup-close:hover {
+    background: rgba(25, 36, 64, 0.9);
 }
 
 /*Categorias de especialidades y especialistas*/
@@ -271,14 +404,16 @@ margin-bottom: 8%;
 
 #sobre_nosotros .nos_ima img, #mision .mision_ima img {
     width: 30%; 
-    height: 280px;
+    height: 328px;
     margin-left: 12%; 
-    border-radius: 2%;
+    border-radius: 10%;
+    background-color: #192440;
+    padding: 5px;
 }
 
 #sobre_nosotros .nos_ima .nos_text, #mision .mision_ima .mision_text { 
     font-size: 140%; 
-    text-align: left; /* Alineación del texto */
+    text-align: justify; /* Alineación del texto */
     margin: 0 15% 0 2%;
 }
 
@@ -321,7 +456,7 @@ margin-bottom: 8%;
     padding: 1%;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #192440;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
@@ -331,7 +466,7 @@ margin-bottom: 8%;
 }
 
 .id-photo img {
-    width: 88%;
+    width: 100%;
     height: 25rem;
     border-radius: 10%;
 }
@@ -353,12 +488,14 @@ margin-bottom: 8%;
     width: 30%; 
     height: 280px;
     margin-right: 15%; 
-    border-radius: 2%;
+    border-radius: 10%;
+    background-color: #192440;
+    padding: 5px;
 }
 
 #vision .vision_ima .vision_text { 
     font-size: 140%; 
-    text-align: left; /* Alineación del texto */
+    text-align: justify; /* Alineación del texto */
     margin-left: 12%;
 }
 
@@ -722,6 +859,26 @@ footer .footer-icons a:hover {
 /*Responsive pantallas pequeñas*/
 @media (max-width: 767px) {
     
+    /*Pop up de noticia importante*/
+    #news-popup-overlay {
+        padding: 0.75rem;
+    }
+
+    #news-popup {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    #news-popup .popup-image img {
+        max-height: 380px; 
+    }
+
+    #news-popup .popup-actions a,
+    #news-popup .popup-actions button {
+        width: 95%; 
+        padding: 0.85rem 1rem;
+    }
+
     /*Cabecera*/
     header {
         justify-content: space-between;
@@ -854,10 +1011,23 @@ footer .footer-icons a:hover {
         font-size: 1.2em; /* Ajusta el tamaño de la fuente del botón */
     }
 
+    /*Video de testimonio*/
+
+    #video_testimonio .video-grid {
+        gap: 1rem;
+        padding: 1% 0;
+    }
+
+    #video_testimonio .video-card {
+        width: 40%;
+        max-width: 40%;
+    }
+
     /*Sobre nosotros, misión y visión*/
     #sobre_nosotros .nos_ima, #mision .mision_ima, #vision .vision_ima {
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     #sobre_nosotros .nos_ima img, #mision .mision_ima img , #vision .vision_ima img {
@@ -867,6 +1037,7 @@ footer .footer-icons a:hover {
         height: 285px;
         border-radius: 2%;
         margin-bottom: 20px; /* Añade espacio entre la imagen y el texto */
+        order: 2;
     }
 
     #sobre_nosotros .nos_ima .nos_text, #mision .mision_ima .mision_text , #vision .vision_ima .vision_text {
@@ -874,6 +1045,18 @@ footer .footer-icons a:hover {
         text-align: center;
         margin: 0;
         margin: 0% 5%;
+        order: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #sobre_nosotros .nos_ima .nos_text h3, #mision .mision_ima .mision_text h3, #vision .vision_ima .vision_text h3 {
+        order: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    #sobre_nosotros .nos_ima .nos_text p, #mision .mision_ima .mision_text p, #vision .vision_ima .vision_text p {
+        order: 3;
     }
     
     /*Especialistas*/
